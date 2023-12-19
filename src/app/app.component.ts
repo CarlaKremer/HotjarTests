@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import Hotjar from '@hotjar/browser';
-import { environment } from '../environments/environment';
 
+const siteId = 3791279;
+const hotjarVersion = 6;
+
+Hotjar.init(siteId, hotjarVersion);
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,8 +14,8 @@ export class AppComponent {
   title = 'hotjarTests';
   constructor() {
     Hotjar.init(
-      Number(environment.hotjarTrackingCode),
-      Number(environment.hotjarVersion)
+      Number(siteId),
+      Number(hotjarVersion)
     );
   }
 }
